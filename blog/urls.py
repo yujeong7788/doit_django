@@ -13,10 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path,include # include 다른데 있는 url 불러다 쓰겠다
+from django.urls import path
+from . import views # 현재 폴더에 있는 view를 임포트해라
 
 urlpatterns = [
-    path("blog/",include('blog.urls')), # 블로그 폴더 안의 urls로 가라
-    path("admin/", admin.site.urls),
-] # 나머지는 site쪽에 urls있음??
+    path('',views.index),
+    
+] # path('',views.index) 블로그에 들어오면 view.index로 보내라 '' > /blog/
+

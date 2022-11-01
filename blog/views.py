@@ -12,4 +12,14 @@ def index(request): # 함수쪽에 무조건 request 입력
         }
     ) 
     
+def single_post_page(request,pk): #???
+    post = Post.objects.get(pk=pk) # 하나만 가져오니까 
+    return render(
+        request,
+        'blog/single_post_page.html', # html
+        {
+            'post':post,
+        }
+    )
+
     

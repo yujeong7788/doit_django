@@ -13,4 +13,6 @@ class Post(models.Model): # 위에있는 모델 상속받음 부모 기본 정�
     
     def __str__(self): # 부모가 가지고있는거라 똑같이 , self 넣는 이유는 뭘까?
         return f'[{self.id}] {self.title}' # 함수가 추가된거라서 migrate 필요없음
+    def get_absolute_url(self):
+        return f'/blog/{self.pk}/'
     

@@ -19,4 +19,5 @@ from django.urls import path,include # include 다른데 있는 url 불러다 �
 urlpatterns = [
     path("blog/",include('blog.urls')), # 블로그 폴더 안의 urls로 가라
     path("admin/", admin.site.urls),
+    path("",include('single_pages.urls')), # single_pages.url에 파일만들어야함
 ] # 나머지는 site쪽에 urls있음??

@@ -8,11 +8,13 @@
 </head>
 <body>
     <h1>Blog</h1>
-    {%for p in posts%}
+    {%for p in posts%} <!-- 딕셔너리에 key값으로 보낸 것과 이름이 동일해야 함(posts 부분)-->
+        <!-- <h3>{{p}}</h3> 내용만 넣고 싶으면 p.content, p라고 개체를 찍으면 __str__에 정의되어 있는대로 나옴? -->
         <hr/>
-        <h2>{{p.title}}</h2>
+        <!-- <h2>{{p.title}}</h2> -->
+        <h2><a href="{{p.get_absolute_url}}">{{p.title}}</a></h2>
         <h4>{{p.create_at}}</h4>
         <p>{{p.content}}</p>
     {%endfor%}
-</body> <!--p적으면 __str__이거 정의 해준 함수 나옴-->
+</body>
 </html>
